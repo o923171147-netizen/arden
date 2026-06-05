@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>永續物流與綠色科技 - 專題報告與數據分析儀表板</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="本平台提供綠色物流與永續科技專題報告之簡報下載、線上投影片簡報器、關鍵綠色物流數據趨勢圖表，並整合多個 YouTube 綠色物流視評與綠色產業科技影片，符合最高級 UI/UX Pro Max 介面設計規範。">
+  <meta name="keywords" content="永續物流, 綠色科技, 碳中和, 供應鏈優化, ESG 儀表板, 智慧物流">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Overlay (Mobile navigation back-drop) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">G</div>
+        <span class="brand-name">GreenLogiTech</span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul class="sidebar-menu">
+          <li class="menu-item active" data-target="dashboard-section">
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="10" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+              <span>趨勢儀表板</span>
+            </a>
+          </li>
+          <li class="menu-item" data-target="ppt-section">
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-presentation"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+              <span>專題投影片</span>
+            </a>
+          </li>
+          <li class="menu-item" data-target="videos-section">
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+              <span>精選影音影評</span>
+            </a>
+          </li>
+          <li class="menu-item" data-target="downloads-section">
+            <a href="#">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download-cloud"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg>
+              <span>相關附件下載</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="profile-card">
+          <div class="avatar">ESG</div>
+          <div class="profile-info">
+            <h4>綠色物流專案小組</h4>
+            <p>永續科技研究員</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Mobile Top Header -->
+    <header class="top-header">
+      <button class="menu-toggle-btn" id="menuToggle" aria-label="切換選單">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+      <div class="brand-name">GreenLogiTech</div>
+      <div class="avatar" style="width: 32px; height: 32px; font-size: 0.75rem;">ESG</div>
+    </header>
+
+    <!-- Main Content Panel -->
+    <main class="main-content">
+      
+      <!-- Section 1: Dashboard Overview -->
+      <section id="dashboard-section" class="active">
+        <div class="section-header">
+          <span class="section-category">Sustainable Technology & ESG Overview</span>
+          <h2 class="section-title">永續物流與綠色科技</h2>
+          <p class="section-desc">監控全球與企業內部的綠色物流指標。以下為運用人工智慧路徑優化、電動車隊與物聯網倉儲所帶來的碳排放降幅與趨勢分析。</p>
+        </div>
+        
+        <!-- Metrics Row -->
+        <div class="metrics-row">
+          <div class="metric-card">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.58 0 8a7 7 0 0 1-8 10Z"/><path d="M19 2c-2.26 4.33-5.27 7.14-8 10"/></svg>
+            </div>
+            <div class="metric-label">累計碳排放減量</div>
+            <div class="metric-value">124,850 噸</div>
+            <div class="metric-change positive">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up" style="width: 14px; height: 14px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              <span>+14.8% 比上季</span>
+            </div>
+          </div>
+          
+          <div class="metric-card accent">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M19 18h2a1 1 0 0 0 1-1v-5.14a1 1 0 0 0-.294-.707l-2.856-2.856A1 1 0 0 0 18.14 8.3H14"/><circle cx="7.5" cy="18.5" r="2.5"/><circle cx="17.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="metric-label">新能源電動車佔比</div>
+            <div class="metric-value">42.5 %</div>
+            <div class="metric-change positive">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up" style="width: 14px; height: 14px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              <span>+8.2% 比去年</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-icon" style="background-color: rgba(59, 130, 246, 0.1); color: #3b82f6;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="metric-label">智慧倉儲綠電自給率</div>
+            <div class="metric-value">68.0 %</div>
+            <div class="metric-change positive">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up" style="width: 14px; height: 14px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              <span>+12.4% 比上月</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="dashboard-grid">
+          <div class="chart-card">
+            <h3>綠色物流市場產值趨勢</h3>
+            <span class="chart-subtitle">全球綠色供應鏈市場的穩定擴張與潛在投資預估 (2020 - 2026)</span>
+            <div class="chart-container">
+              <canvas id="marketTrendChart"></canvas>
+            </div>
+          </div>
+          
+          <div class="chart-card">
+            <h3>減碳關鍵技術貢獻佔比</h3>
+            <span class="chart-subtitle">依據各項綠色物流核心技術模組對年度碳排放降低的貢獻比重</span>
+            <div class="chart-container">
+              <canvas id="reductionContributionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: PPT Slides Viewer -->
+      <section id="ppt-section">
+        <div class="section-header">
+          <span class="section-category">Interactive Slide Deck</span>
+          <h2 class="section-title">永續物流與綠色科技投影片</h2>
+          <p class="section-desc">線上查閱綠色物流簡報，瞭解最新永續商業模式與科技運用策略。支援鍵盤左右方向鍵翻頁。</p>
+        </div>
+
+        <div class="slides-viewer-card">
+          <!-- Slide Container -->
+          <div class="slide-viewport">
+            <div class="slide-loading" id="slideLoading">
+              <div class="spinner"></div>
+              <span>載入簡報投影片中...</span>
+            </div>
+            <img src="slides_images/slide1.png" alt="投影片" id="slideImage">
+          </div>
+
+          <!-- Slide Controls -->
+          <div class="slide-controls">
+            <button class="slide-nav-btn" id="prevSlide" aria-label="上一頁" disabled>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            
+            <div class="slide-progress-container">
+              <div class="slide-progress-bar">
+                <div class="slide-progress-fill" id="slideProgressFill"></div>
+              </div>
+              <span class="slide-index-label" id="slideIndexLabel">第 1 / 28 頁</span>
+            </div>
+
+            <button class="slide-nav-btn" id="nextSlide" aria-label="下一頁">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="slide-actions">
+            <a href="永續物流與綠色科技.pptx" download class="btn-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+              <span>下載 PPTX 簡報檔 (61.8 MB)</span>
+            </a>
+            <a href="永續物流與綠色技術.pptx.pdf" target="_blank" class="btn-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+              <span>線上預覽/下載 PDF 檔 (354 KB)</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: YouTube Videos Section -->
+      <section id="videos-section">
+        <div class="section-header">
+          <span class="section-category">Multimedia Library</span>
+          <h2 class="section-title">精選影音與產業視評</h2>
+          <p class="section-desc">精選 YouTube 上關於綠色科技、永續物流實務與全球供應鏈低碳轉型的影音資料，加深對綠色生態圈的理解。</p>
+        </div>
+
+        <div class="videos-grid">
+          <!-- Video 1 -->
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/iOg_y3-FcRY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-body">
+              <span class="video-tag">永續物流思維</span>
+              <h3 class="video-title">綠色物流未來趨勢：碳中和與減碳關鍵路徑</h3>
+              <p class="video-desc">深入分析現代供應鏈在面臨歐盟 CBAM 等碳關稅壓力下，如何透過全面綠色化轉型提升核心競爭力。</p>
+            </div>
+          </div>
+          
+          <!-- Video 2 -->
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/biGSdycqWZ8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-body">
+              <span class="video-tag">智慧科技應用</span>
+              <h3 class="video-title">AI 技術在物流行業的低碳革新與配送路徑優化</h3>
+              <p class="video-desc">介紹如何以人工智慧、機器學習演算法，在每日數百萬件包裹的配送任務中，精準削減行駛里程與耗油量。</p>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="video-card">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/YsmFThCkhWc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-body">
+              <span class="video-tag">產業實務觀點</span>
+              <h3 class="video-title">綠色智慧工廠與自動化零排放倉儲管理實戰</h3>
+              <p class="video-desc">實地參訪當前全球先進倉儲如何結合屋頂太陽能板、儲能系統及 AGV 無人搬運車，實現運營階段近乎零排放目標。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Document Downloads -->
+      <section id="downloads-section">
+        <div class="section-header">
+          <span class="section-category">Resource Center</span>
+          <h2 class="section-title">專案附件與參考資料下載</h2>
+          <p class="section-desc">在此處可直接獲取專題相關的原始報告簡報檔與 PDF 彙整文件，便於在其他平台上簡報或進行學術/商務使用。</p>
+        </div>
+
+        <div class="downloads-grid">
+          <!-- Download PPTX -->
+          <div class="download-card">
+            <div class="download-info">
+              <div class="file-icon pptx">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-type"><path d="M15 2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9"/><path d="M20 8v11a2 2 0 0 1-2 2h-2"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M10 13H8"/></svg>
+              </div>
+              <div class="file-details">
+                <h4>永續物流與綠色科技.pptx</h4>
+                <p>PowerPoint 簡報原檔 • 61.8 MB</p>
+              </div>
+            </div>
+            <a href="永續物流與綠色科技.pptx" download class="btn-download">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+              <span>下載 PPTX 檔案</span>
+            </a>
+          </div>
+
+          <!-- Download PDF -->
+          <div class="download-card">
+            <div class="download-info">
+              <div class="file-icon pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+              </div>
+              <div class="file-details">
+                <h4>永續物流與綠色技術.pptx.pdf</h4>
+                <p>PDF 文件格式 • 353 KB</p>
+              </div>
+            </div>
+            <a href="永續物流與綠色技術.pptx.pdf" download class="btn-download">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+              <span>下載 PDF 檔案</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Area -->
+      <footer class="footer-text">
+        <p>© 2026 GreenLogiTech 永續物流與綠色技術專案研究小組. All Rights Reserved.</p>
+        <p style="margin-top: 4px; color: var(--text-muted);">本平台由 UI/UX Pro Max 高級設計引導實現</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- App Main Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
