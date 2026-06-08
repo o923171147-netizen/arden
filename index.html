@@ -3,78 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>永續物流與綠色科技 - 專題報告與數據分析儀表板</title>
+  <title>ESG永續物流與綠色技術 - 專題儀表板</title>
   
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="本平台提供綠色物流與永續科技專題報告之簡報下載、線上投影片簡報器、關鍵綠色物流數據趨勢圖表，並整合多個 YouTube 綠色物流視評與綠色產業科技影片，符合最高級 UI/UX Pro Max 介面設計規範。">
-  <meta name="keywords" content="永續物流, 綠色科技, 碳中和, 供應鏈優化, ESG 儀表板, 智慧物流">
+  <!-- SEO Optimization -->
+  <meta name="description" content="本平台提供綠色物流與永續供應鏈減碳技術專案簡報展示、動態趨勢圖表、影音分析，並展出金門高粱戰酒黑金龍高端金箔酒及貔貅組之私人收藏館。">
+  <meta name="keywords" content="ESG永續物流, 綠色供應鏈, 碳中和, 減碳科技, 戰酒黑金龍, 金箔高粱酒, 貔貅聚財">
   
-  <!-- Stylesheets -->
+  <!-- Design System CSS -->
   <link rel="stylesheet" href="styles.css">
   
-  <!-- Chart.js CDN -->
+  <!-- Chart.js for Trend Visualization -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <div class="app-container">
-    <!-- Sidebar Overlay (Mobile navigation back-drop) -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <!-- Dynamic Ambient Background Light Blobs -->
+  <div class="ambient-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
 
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- App Layout Container -->
+  <div class="app-container">
+    
     <!-- Sidebar Navigation -->
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-brand">
-        <div class="brand-logo">G</div>
-        <span class="brand-name">GreenLogiTech</span>
+      <div class="sidebar-header">
+        <div class="logo-container">ESG</div>
+        <div class="sidebar-title-wrapper">
+          <span class="sidebar-title">EcoLogiTech</span>
+          <span class="sidebar-subtitle">Sustainable Logistics</span>
+        </div>
       </div>
       
       <nav class="sidebar-nav">
-        <ul class="sidebar-menu">
-          <li class="menu-item active" data-target="dashboard-section">
-            <a href="#">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="10" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
-              <span>趨勢儀表板</span>
-            </a>
+        <ul class="nav-list">
+          <li>
+            <button class="nav-item-btn active" data-target="dashboard-section">
+              <!-- Lucide: LayoutDashboard -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="10" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+              <span>數據儀表板</span>
+            </button>
           </li>
-          <li class="menu-item" data-target="ppt-section">
-            <a href="#">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-presentation"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+          <li>
+            <button class="nav-item-btn" data-target="slides-section">
+              <!-- Lucide: Presentation -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
               <span>專題投影片</span>
-            </a>
+            </button>
           </li>
-          <li class="menu-item" data-target="videos-section">
-            <a href="#">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-              <span>精選影音影評</span>
-            </a>
+          <li>
+            <button class="nav-item-btn" data-target="videos-section">
+              <!-- Lucide: Video -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+              <span>精選影音檔</span>
+            </button>
           </li>
-          <li class="menu-item" data-target="downloads-section">
-            <a href="#">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download-cloud"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg>
+          <li>
+            <button class="nav-item-btn" data-target="downloads-section">
+              <!-- Lucide: DownloadCloud -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m8 17 4 4 4-4"/></svg>
               <span>相關附件下載</span>
-            </a>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn gold-nav" data-target="collection-section">
+              <!-- Lucide: Award -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>
+              <span>私房珍藏館</span>
+            </button>
           </li>
         </ul>
       </nav>
-
+      
       <div class="sidebar-footer">
-        <div class="profile-card">
-          <div class="avatar">ESG</div>
-          <div class="profile-info">
-            <h4>綠色物流專案小組</h4>
-            <p>永續科技研究員</p>
+        <div class="user-profile">
+          <div class="avatar">SL</div>
+          <div class="user-info">
+            <span class="user-name">綠色科技研究組</span>
+            <span class="user-role">ESG 專題展示</span>
           </div>
         </div>
       </div>
     </aside>
 
-    <!-- Mobile Top Header -->
-    <header class="top-header">
-      <button class="menu-toggle-btn" id="menuToggle" aria-label="切換選單">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    <!-- Mobile Top Header Bar -->
+    <header class="mobile-header">
+      <button class="menu-toggle" id="menuToggleBtn" aria-label="切換選單">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
       </button>
-      <div class="brand-name">GreenLogiTech</div>
-      <div class="avatar" style="width: 32px; height: 32px; font-size: 0.75rem;">ESG</div>
+      <div class="logo-container" style="width: 34px; height: 34px; font-size: 1rem;">ESG</div>
+      <div class="avatar" style="width: 32px; height: 32px; font-size: 0.75rem;">SL</div>
     </header>
 
     <!-- Main Content Panel -->
@@ -83,219 +106,439 @@
       <!-- Section 1: Dashboard Overview -->
       <section id="dashboard-section" class="active">
         <div class="section-header">
-          <span class="section-category">Sustainable Technology & ESG Overview</span>
-          <h2 class="section-title">永續物流與綠色科技</h2>
-          <p class="section-desc">監控全球與企業內部的綠色物流指標。以下為運用人工智慧路徑優化、電動車隊與物聯網倉儲所帶來的碳排放降幅與趨勢分析。</p>
+          <span class="category-tag">ESG Metrics & Core Data</span>
+          <h1 class="section-title">ESG永續物流與綠色技術</h1>
+          <p class="section-desc">本專案展示物流供應鏈於數位化轉型下的綠色技術實踐。透過大數據分析與智慧排程系統，減少碳足跡、提升電動載具自給率，建構永續發展的物流生態圈。</p>
         </div>
-        
-        <!-- Metrics Row -->
-        <div class="metrics-row">
-          <div class="metric-card">
-            <div class="metric-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.58 0 8a7 7 0 0 1-8 10Z"/><path d="M19 2c-2.26 4.33-5.27 7.14-8 10"/></svg>
+
+        <!-- Stat Metrics Row -->
+        <div class="metrics-grid">
+          <div class="glass-card">
+            <div class="metric-header">
+              <div class="metric-icon-box">
+                <!-- Lucide: Leaf -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.58 0 8a7 7 0 0 1-8 10Z"/><path d="M19 2c-2.26 4.33-5.27 7.14-8 10"/></svg>
+              </div>
+              <div class="metric-trend up">
+                <!-- Lucide: ArrowUpRight -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                <span>+14.8%</span>
+              </div>
             </div>
-            <div class="metric-label">累計碳排放減量</div>
-            <div class="metric-value">124,850 噸</div>
-            <div class="metric-change positive">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up" style="width: 14px; height: 14px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-              <span>+14.8% 比上季</span>
-            </div>
+            <div class="metric-title">累計碳排放減量</div>
+            <div class="metric-value">124,850 t</div>
           </div>
-          
-          <div class="metric-card accent">
-            <div class="metric-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M19 18h2a1 1 0 0 0 1-1v-5.14a1 1 0 0 0-.294-.707l-2.856-2.856A1 1 0 0 0 18.14 8.3H14"/><circle cx="7.5" cy="18.5" r="2.5"/><circle cx="17.5" cy="18.5" r="2.5"/></svg>
+
+          <div class="glass-card">
+            <div class="metric-header">
+              <div class="metric-icon-box">
+                <!-- Lucide: Truck -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M19 18h2a1 1 0 0 0 1-1v-5.14a1 1 0 0 0-.294-.707l-2.856-2.856A1 1 0 0 0 18.14 8.3H14"/><circle cx="7.5" cy="18.5" r="2.5"/><circle cx="17.5" cy="18.5" r="2.5"/></svg>
+              </div>
+              <div class="metric-trend up">
+                <!-- Lucide: ArrowUpRight -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                <span>+8.2%</span>
+              </div>
             </div>
-            <div class="metric-label">新能源電動車佔比</div>
+            <div class="metric-title">新能源電動車佔比</div>
             <div class="metric-value">42.5 %</div>
-            <div class="metric-change positive">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up" style="width: 14px; height: 14px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-              <span>+8.2% 比去年</span>
-            </div>
           </div>
 
-          <div class="metric-card">
-            <div class="metric-icon" style="background-color: rgba(59, 130, 246, 0.1); color: #3b82f6;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <div class="glass-card">
+            <div class="metric-header">
+              <div class="metric-icon-box">
+                <!-- Lucide: Zap -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div class="metric-trend up">
+                <!-- Lucide: ArrowUpRight -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                <span>+12.4%</span>
+              </div>
             </div>
-            <div class="metric-label">智慧倉儲綠電自給率</div>
+            <div class="metric-title">智慧倉儲綠電自給率</div>
             <div class="metric-value">68.0 %</div>
-            <div class="metric-change positive">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up" style="width: 14px; height: 14px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-              <span>+12.4% 比上月</span>
-            </div>
           </div>
         </div>
 
-        <!-- Charts Grid -->
-        <div class="dashboard-grid">
-          <div class="chart-card">
-            <h3>綠色物流市場產值趨勢</h3>
-            <span class="chart-subtitle">全球綠色供應鏈市場的穩定擴張與潛在投資預估 (2020 - 2026)</span>
-            <div class="chart-container">
-              <canvas id="marketTrendChart"></canvas>
+        <!-- Charts Row -->
+        <div class="charts-grid">
+          <div class="glass-card chart-card">
+            <h3 class="chart-card-title">全球綠色物流市場產值規模趨勢</h3>
+            <span class="chart-card-subtitle">預估 2020 年至 2026 年綠色供應鏈市場規模之增長態勢 (十億美元)</span>
+            <div class="chart-wrapper">
+              <canvas id="trendChart"></canvas>
             </div>
           </div>
-          
-          <div class="chart-card">
-            <h3>減碳關鍵技術貢獻佔比</h3>
-            <span class="chart-subtitle">依據各項綠色物流核心技術模組對年度碳排放降低的貢獻比重</span>
-            <div class="chart-container">
-              <canvas id="reductionContributionChart"></canvas>
+
+          <div class="glass-card chart-card">
+            <h3 class="chart-card-title">核心減碳技術貢獻佔比</h3>
+            <span class="chart-card-subtitle">各項永續綠色技術模組對年度碳排放降低的貢獻權重比 (%)</span>
+            <div class="chart-wrapper">
+              <canvas id="contributionChart"></canvas>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section 2: PPT Slides Viewer -->
-      <section id="ppt-section">
+      <!-- Section 2: PPT Interactive Viewer -->
+      <section id="slides-section">
         <div class="section-header">
-          <span class="section-category">Interactive Slide Deck</span>
-          <h2 class="section-title">永續物流與綠色科技投影片</h2>
-          <p class="section-desc">線上查閱綠色物流簡報，瞭解最新永續商業模式與科技運用策略。支援鍵盤左右方向鍵翻頁。</p>
+          <span class="category-tag">Online Presenter</span>
+          <h1 class="section-title">永續物流與綠色科技 專題簡報</h1>
+          <p class="section-desc">線上投影片播放器：直接瀏覽 ESG 專題報告的核心結構（共 28 頁）。可使用點擊導航、左右方向鍵或空白鍵控制切換。</p>
         </div>
 
-        <div class="slides-viewer-card">
-          <!-- Slide Container -->
+        <div class="glass-card slides-card">
+          <!-- Viewport -->
           <div class="slide-viewport">
-            <div class="slide-loading" id="slideLoading">
+            <div class="slide-spinner-overlay" id="slideSpinner">
               <div class="spinner"></div>
-              <span>載入簡報投影片中...</span>
+              <span>正在載入簡報投影片...</span>
             </div>
-            <img src="slides_images/slide1.png" alt="投影片" id="slideImage">
+            <img src="slides_images/slide1.png" alt="專題簡報投影片內容" class="slide-img" id="slideDisplay">
           </div>
 
           <!-- Slide Controls -->
-          <div class="slide-controls">
-            <button class="slide-nav-btn" id="prevSlide" aria-label="上一頁" disabled>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+          <div class="slide-navigation-bar">
+            <button class="slide-nav-btn" id="slidePrevBtn" aria-label="上一頁" disabled>
+              <!-- Lucide: ChevronLeft -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
             
-            <div class="slide-progress-container">
-              <div class="slide-progress-bar">
-                <div class="slide-progress-fill" id="slideProgressFill"></div>
+            <div class="slide-progress-info">
+              <div class="slide-progress-bar-bg">
+                <div class="slide-progress-bar-fill" id="slideProgressBarFill"></div>
               </div>
-              <span class="slide-index-label" id="slideIndexLabel">第 1 / 28 頁</span>
+              <div class="slide-index-info">
+                <span>投影片瀏覽</span>
+                <span id="slideIndexLabel">第 1 / 28 頁</span>
+              </div>
             </div>
 
-            <button class="slide-nav-btn" id="nextSlide" aria-label="下一頁">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+            <button class="slide-nav-btn" id="slideNextBtn" aria-label="下一頁">
+              <!-- Lucide: ChevronRight -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </button>
           </div>
 
-          <!-- Quick Action Buttons -->
-          <div class="slide-actions">
-            <a href="永續物流與綠色科技.pptx" download class="btn-secondary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
-              <span>下載 PPTX 簡報檔 (61.8 MB)</span>
+          <!-- Slide Actions -->
+          <div class="slide-deck-actions">
+            <a href="永續物流與綠色科技.pptx" download class="btn-premium btn-primary-action">
+              <!-- Lucide: FileSpreadsheet -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h10"/></svg>
+              <span>下載 PPTX 簡報原檔 (61.8 MB)</span>
             </a>
-            <a href="永續物流與綠色技術.pptx.pdf" target="_blank" class="btn-secondary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
-              <span>線上預覽/下載 PDF 檔 (354 KB)</span>
+            <a href="永續物流與綠色技術.pptx.pdf" target="_blank" class="btn-premium btn-secondary-action">
+              <!-- Lucide: ExternalLink -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+              <span>新分頁預覽 PDF 檔 (354 KB)</span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Section 3: YouTube Videos Section -->
+      <!-- Section 3: YouTube Videos -->
       <section id="videos-section">
         <div class="section-header">
-          <span class="section-category">Multimedia Library</span>
-          <h2 class="section-title">精選影音與產業視評</h2>
-          <p class="section-desc">精選 YouTube 上關於綠色科技、永續物流實務與全球供應鏈低碳轉型的影音資料，加深對綠色生態圈的理解。</p>
+          <span class="category-tag">Curated Media</span>
+          <h1 class="section-title">精選影音與專題影評</h1>
+          <p class="section-desc">精選與綠色物流與減碳路徑優化相關的 YouTube 影片，結合專家洞察與實地應用案例，協助深入理解產業變革。</p>
         </div>
 
         <div class="videos-grid">
           <!-- Video 1 -->
-          <div class="video-card">
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/iOg_y3-FcRY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="glass-card video-card">
+            <div class="video-aspect-wrapper">
+              <iframe src="https://www.youtube.com/embed/iOg_y3-FcRY" title="ESG 永續物流趨勢報告" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="video-body">
-              <span class="video-tag">永續物流思維</span>
-              <h3 class="video-title">綠色物流未來趨勢：碳中和與減碳關鍵路徑</h3>
-              <p class="video-desc">深入分析現代供應鏈在面臨歐盟 CBAM 等碳關稅壓力下，如何透過全面綠色化轉型提升核心競爭力。</p>
+            <div class="video-content-body">
+              <span class="video-badge">趨勢探討</span>
+              <h3 class="video-card-title">全球碳中和規範下的供應鏈低碳轉型策略</h3>
+              <p class="video-card-desc">探討跨國物流體系在面對歐盟碳邊境稅等綠色條例下，如何建立碳足跡監控體系並進行新能源車隊汰換。</p>
             </div>
           </div>
-          
+
           <!-- Video 2 -->
-          <div class="video-card">
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/biGSdycqWZ8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="glass-card video-card">
+            <div class="video-aspect-wrapper">
+              <iframe src="https://www.youtube.com/embed/biGSdycqWZ8" title="AI 在物流行業的優化演算法" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="video-body">
-              <span class="video-tag">智慧科技應用</span>
-              <h3 class="video-title">AI 技術在物流行業的低碳革新與配送路徑優化</h3>
-              <p class="video-desc">介紹如何以人工智慧、機器學習演算法，在每日數百萬件包裹的配送任務中，精準削減行駛里程與耗油量。</p>
+            <div class="video-content-body">
+              <span class="video-badge">人工智慧與大數據</span>
+              <h3 class="video-card-title">AI路徑規劃與多端配送調度系統的實務突破</h3>
+              <p class="video-card-desc">技術層面剖析動態圖演算法如何協助大型車隊重新規劃行車路徑，縮短里程以落實源頭節能減碳。</p>
             </div>
           </div>
 
           <!-- Video 3 -->
-          <div class="video-card">
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/YsmFThCkhWc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="glass-card video-card">
+            <div class="video-aspect-wrapper">
+              <iframe src="https://www.youtube.com/embed/YsmFThCkhWc" title="智慧零碳無人倉儲" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="video-body">
-              <span class="video-tag">產業實務觀點</span>
-              <h3 class="video-title">綠色智慧工廠與自動化零排放倉儲管理實戰</h3>
-              <p class="video-desc">實地參訪當前全球先進倉儲如何結合屋頂太陽能板、儲能系統及 AGV 無人搬運車，實現運營階段近乎零排放目標。</p>
+            <div class="video-content-body">
+              <span class="video-badge">零碳工廠與自給綠電</span>
+              <h3 class="video-card-title">智慧無人倉儲與微電網太陽能儲能系統融合</h3>
+              <p class="video-card-desc">實地展示全自動化無人倉儲中心如何透過屋頂太陽能板與磷酸鋰鐵儲能櫃，實現 100% 綠電營運模式。</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Section 4: Document Downloads -->
+      <!-- Section 4: Downloads -->
       <section id="downloads-section">
         <div class="section-header">
-          <span class="section-category">Resource Center</span>
-          <h2 class="section-title">專案附件與參考資料下載</h2>
-          <p class="section-desc">在此處可直接獲取專題相關的原始報告簡報檔與 PDF 彙整文件，便於在其他平台上簡報或進行學術/商務使用。</p>
+          <span class="category-tag">Resources Center</span>
+          <h1 class="section-title">相關附件下載區</h1>
+          <p class="section-desc">提供本永續物流專題所涉及的所有簡報、PDF報告原檔下載，方便於本機離線開啟或呈報簡報。</p>
         </div>
 
-        <div class="downloads-grid">
-          <!-- Download PPTX -->
-          <div class="download-card">
-            <div class="download-info">
-              <div class="file-icon pptx">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-type"><path d="M15 2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9"/><path d="M20 8v11a2 2 0 0 1-2 2h-2"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M10 13H8"/></svg>
+        <div class="download-rows">
+          <!-- PPTX Card -->
+          <div class="download-row-card">
+            <div class="file-info-group">
+              <div class="file-type-icon pptx">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
               </div>
-              <div class="file-details">
-                <h4>永續物流與綠色科技.pptx</h4>
-                <p>PowerPoint 簡報原檔 • 61.8 MB</p>
+              <div class="file-name-meta">
+                <span class="file-title">永續物流與綠色科技.pptx</span>
+                <span class="file-meta-text">PowerPoint 簡報原檔 • 大小: 61.8 MB • 28 頁完整圖文資訊</span>
               </div>
             </div>
-            <a href="永續物流與綠色科技.pptx" download class="btn-download">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-              <span>下載 PPTX 檔案</span>
+            <a href="永續物流與綠色科技.pptx" download class="btn-download-arrow" aria-label="下載 PPTX 原檔">
+              <!-- Lucide: ArrowDown -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
             </a>
           </div>
 
-          <!-- Download PDF -->
-          <div class="download-card">
-            <div class="download-info">
-              <div class="file-icon pdf">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          <!-- PDF Card -->
+          <div class="download-row-card">
+            <div class="file-info-group">
+              <div class="file-type-icon pdf">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
               </div>
-              <div class="file-details">
-                <h4>永續物流與綠色技術.pptx.pdf</h4>
-                <p>PDF 文件格式 • 353 KB</p>
+              <div class="file-name-meta">
+                <span class="file-title">永續物流與綠色技術.pptx.pdf</span>
+                <span class="file-meta-text">PDF 高清簡報文件 • 大小: 353 KB • 適合列印及新視窗檢視</span>
               </div>
             </div>
-            <a href="永續物流與綠色技術.pptx.pdf" download class="btn-download">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-              <span>下載 PDF 檔案</span>
+            <a href="永續物流與綠色技術.pptx.pdf" download class="btn-download-arrow" aria-label="下載 PDF 文件">
+              <!-- Lucide: ArrowDown -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Footer Area -->
-      <footer class="footer-text">
-        <p>© 2026 GreenLogiTech 永續物流與綠色技術專案研究小組. All Rights Reserved.</p>
-        <p style="margin-top: 4px; color: var(--text-muted);">本平台由 UI/UX Pro Max 高級設計引導實現</p>
+      <!-- Section 5: Personal Collection (Kaoliang Wine & Pi Xiu) -->
+      <section id="collection-section">
+        <div class="section-header">
+          <span class="category-tag gold-tag">Premium Treasures</span>
+          <h1 class="section-title">戰酒黑金龍 • <span class="gold-text">金箔酒私人珍藏館</span></h1>
+          <p class="section-desc">匠心獨運的白酒工藝美學。展示個人精心蒐藏的金門高粱高端代表作——戰酒黑金龍金箔酒第一版至第七版，以及精緻的珍寶貔貅組，透過極致工藝的瓶身設計與9999純金箔，點綴白酒文化的非凡光彩。</p>
+        </div>
+
+        <div class="gold-bento-grid">
+          
+          <!-- Item 1: 第一版 (Bento Hero Card) -->
+          <div class="glass-card collection-card bento-item-hero gold-hover">
+            <div class="collection-image-container" data-img-src="個人收藏/第一版戰酒黑金龍金箔酒560CC(1).png" data-title="第一版 戰酒黑金龍金箔酒 (560CC)" data-desc="個人珍藏系列首部曲。首度嘗試將9999食用級汽化純金箔融入戰酒黑金龍經典酒體，創造出璀璨奪目的金黃旋風。金箔在水晶般透亮的酒液中飛舞，香氣濃郁，入口甘美。">
+              <img src="個人收藏/第一版戰酒黑金龍金箔酒560CC(1).png" alt="第一版 戰酒黑金龍金箔酒 560CC">
+              <div class="collection-image-overlay">
+                <div class="overlay-zoom-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="collection-details">
+              <div>
+                <div class="collection-meta">
+                  <span class="edition-tag">第 1 版 • 創始經典</span>
+                  <span class="volume-tag">容量: 560 cc</span>
+                </div>
+                <h3 class="collection-card-title">第一版 戰酒黑金龍金箔酒 (560CC)</h3>
+                <p class="collection-card-desc">作為金箔系列的開端，此版本精緻厚實，完美展現了金箔與黑金龍醇厚酒體的完美結合，極具開創性的紀念價值。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: 第二版 -->
+          <div class="glass-card collection-card bento-item gold-hover">
+            <div class="collection-image-container" data-img-src="個人收藏/第二版戰酒黑金龍金箔3000cc(2).png" data-title="第二版 戰酒黑金龍金箔酒 (3000CC)" data-desc="重磅推出的巨無霸3000cc大容量版本。奢華大器的瓶身設計，專為尊榮宴客或鎮宅珍藏而生。氣派瓶身內部，萬片純金箔如飛雪般起舞，視覺震撼無可比擬。">
+              <img src="個人收藏/第二版戰酒黑金龍金箔3000cc(2).png" alt="第二版 戰酒黑金龍金箔酒 3000CC">
+              <div class="collection-image-overlay">
+                <div class="overlay-zoom-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="collection-details">
+              <div>
+                <div class="collection-meta">
+                  <span class="edition-tag">第 2 版 • 尊榮巨獻</span>
+                  <span class="volume-tag">容量: 3000 cc</span>
+                </div>
+                <h3 class="collection-card-title">第二版 戰酒黑金龍金箔 (3000cc)</h3>
+                <p class="collection-card-desc">霸氣十足的3000cc大酒瓶，展現豪邁大方氣勢，瓶內金箔飛舞，令人嘆為觀止。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: 第三版 -->
+          <div class="glass-card collection-card bento-item gold-hover">
+            <div class="collection-image-container" data-img-src="個人收藏/第三版版 (2020年  2021年)：3D立體蟠龍版3600CC(3).png" data-title="第三版 3D立體蟠龍版 (3600CC)" data-desc="2020至2021年跨年鉅作，容量升級至3600cc。瓶身內部設計出栩栩如生的3D立體蟠龍石雕感藝術，蟠龍繞瓶，口含金珠。注入金箔高粱酒液後，蟠龍金箔相伴，氣勢萬千，堪稱博物館級藝術品。">
+              <img src="個人收藏/第三版版 (2020年  2021年)：3D立體蟠龍版3600CC(3).png" alt="第三版 3D立體蟠龍版 3600CC">
+              <div class="collection-image-overlay">
+                <div class="overlay-zoom-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="collection-details">
+              <div>
+                <div class="collection-meta">
+                  <span class="edition-tag">第 3 版 • 3D蟠龍</span>
+                  <span class="volume-tag">容量: 3600 cc</span>
+                </div>
+                <h3 class="collection-card-title">第三版 3D立體蟠龍版 (3600CC)</h3>
+                <p class="collection-card-desc">3600cc超巨量，瓶內嵌入栩栩如生的蟠龍，與金箔共舞，威嚴神聖，為藏家夢幻之作。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: 第四版 -->
+          <div class="glass-card collection-card bento-item gold-hover">
+            <div class="collection-image-container" data-img-src="個人收藏/第四版 (2022年)：龍騰虎躍版(4).jpg" data-title="第四版 龍騰虎躍版 (2022年)" data-desc="2022年限量發行之生肖代表作——龍騰虎躍版。將東方瑞獸祥龍與猛虎之英姿，以細膩精緻的金雕瓶身與浮雕手法重現。金箔在龍騰虎躍的背景下散落，象徵福虎生風、龍瑞祥兆。">
+              <img src="個人收藏/第四版 (2022年)：龍騰虎躍版(4).jpg" alt="第四版 龍騰虎躍版">
+              <div class="collection-image-overlay">
+                <div class="overlay-zoom-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="collection-details">
+              <div>
+                <div class="collection-meta">
+                  <span class="edition-tag">第 4 版 • 龍騰虎躍</span>
+                  <span class="volume-tag">發行: 2022年</span>
+                </div>
+                <h3 class="collection-card-title">第四版 龍騰虎躍版 (2022)</h3>
+                <p class="collection-card-desc">祥龍與威虎躍然瓶身，生肖寓意極強，碎金飛揚於瑞獸身側，極為喜慶豪邁。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: 第五版 -->
+          <div class="glass-card collection-card bento-item gold-hover">
+            <div class="collection-image-container" data-img-src="個人收藏/第五版 (2023年)：鴻兔大展版(5).jpg" data-title="第五版 鴻兔大展版 (2023年)" data-desc="2023癸卯兔年鉅作，主題為「鴻兔大展」。瓶身設計融合了兔年祥瑞溫雅的姿態，並以金色祥雲、明月作為底蘊，勾勒出玉兔靈動之姿。瓶中純金箔舞動，散發祥和富貴的東方節慶韻味。">
+              <img src="個人收藏/第五版 (2023年)：鴻兔大展版(5).jpg" alt="第五版 鴻兔大展版">
+              <div class="collection-image-overlay">
+                <div class="overlay-zoom-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="collection-details">
+              <div>
+                <div class="collection-meta">
+                  <span class="edition-tag">第 5 版 • 鴻兔大展</span>
+                  <span class="volume-tag">發行: 2023年</span>
+                </div>
+                <h3 class="collection-card-title">第五版 鴻兔大展版 (2023)</h3>
+                <p class="collection-card-desc">以靈動生肖玉兔為設計主軸，金色光澤流動，細膩優雅，寓意步步高升。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: 第六版 -->
+          <div class="glass-card collection-card bento-item gold-hover">
+            <div class="collection-image-container" data-img-src="個人收藏/第六版 (2024年)：龍年特仕版(6).jpg" data-title="第六版 龍年特仕版 (2024年)" data-desc="2024甲辰龍年限量特仕版。作為華人文化中最神聖的生肖之年，本款設計採用金龍盤踞的皇家圖騰，線條精細洗練，尊貴的黑金底座凸顯金龍耀眼奪目。9999金箔大片分佈，宛若金龍吞吐雲霧之象，震撼人心。">
+              <img src="個人收藏/第六版 (2024年)：龍年特仕版(6).jpg" alt="第六版 龍年特仕版">
+              <div class="collection-image-overlay">
+                <div class="overlay-zoom-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="collection-details">
+              <div>
+                <div class="collection-meta">
+                  <span class="edition-tag">第 6 版 • 龍年特仕</span>
+                  <span class="volume-tag">發行: 2024年</span>
+                </div>
+                <h3 class="collection-card-title">第六版 龍年特仕版 (2024)</h3>
+                <p class="collection-card-desc">龍年本命生肖瓶，霸氣盤龍圖飾與大量純金箔相映成輝，為收藏界高人氣逸品。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: 第七版 -->
+          <div class="glass-card collection-card bento-item gold-hover">
+            <div class="collection-image-container" data-img-src="個人收藏/第七版 (2025年)：琥珀蟠龍版(7).jpg" data-title="第七版 琥珀蟠龍版 (2025年)" data-desc="最新發行 2025 年「琥珀蟠龍版」。首度引進琥珀雙彩的琉璃燒製工藝，讓瓶身的祥龍呈現溫潤尊貴的琥珀光澤，蟠龍昂首，栩栩如生。晶亮高粱酒液中游動著精緻純金箔，展現頂級藝術白酒之巔峰姿態。">
+              <img src="個人收藏/第七版 (2025年)：琥珀蟠龍版(7).jpg" alt="第七版 琥珀蟠龍版">
+              <div class="collection-image-overlay">
+                <div class="overlay-zoom-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="collection-details">
+              <div>
+                <div class="collection-meta">
+                  <span class="edition-tag">第 7 版 • 琥珀蟠龍</span>
+                  <span class="volume-tag">發行: 2025年</span>
+                </div>
+                <h3 class="collection-card-title">第七版 琥珀蟠龍版 (2025)</h3>
+                <p class="collection-card-desc">2025最新代表作，瓶身採用尊貴的琥珀漸層色彩蟠龍，極致美感與尊榮感兼備。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8: 三寶與貔貅組 (Bento Item Large) -->
+          <div class="glass-card collection-card bento-item-large bento-item-side gold-hover">
+            <div class="collection-image-container" data-img-src="個人收藏/戰酒黑金龍金箔酒三寶及聚財貔貅組(8).jpg" data-title="戰酒黑金龍金箔酒三寶及聚財貔貅組" data-desc="個人收藏中最具招財寓意的主題組合。結合戰酒黑金龍「精選三寶」小瓶紀念酒以及一對雕琢精細的「聚財貔貅」神獸座。貔貅代表只進不出、聚財納福，搭配金箔飛揚的高粱酒，象徵生意興隆、財源滾滾、長壽安康。">
+              <img src="個人收藏/戰酒黑金龍金箔酒三寶及聚財貔貅組(8).jpg" alt="戰酒黑金龍金箔酒三寶及聚財貔貅組">
+              <div class="collection-image-overlay">
+                <div class="overlay-zoom-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="collection-details">
+              <div>
+                <div class="collection-meta">
+                  <span class="edition-tag" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">限量臻選 • 聚財套組</span>
+                  <span class="volume-tag">八件招財組</span>
+                </div>
+                <h3 class="collection-card-title">三寶及聚財貔貅組</h3>
+                <p class="collection-card-desc">包含精緻高粱三寶酒款與招財避邪的貔貅組，是風水鎮宅與高端白酒收藏極致之選。</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Footer Note -->
+      <footer class="footer-note">
+        <p>© 2026 EcoLogiTech 永續物流與綠色科技研究小組. All Rights Reserved.</p>
+        <p style="margin-top: 6px; font-size: 0.75rem;">本網頁基於 UI/UX Pro Max 高級設計引導實現。專案編號: arden2 • 純手作優質暗黑介面</p>
       </footer>
 
     </main>
+  </div>
+
+  <!-- Lightbox Zoom Modal -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="關閉預覽">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <img src="" alt="放大收藏圖" class="lightbox-img" id="lightboxImg">
+      <h3 class="lightbox-title" id="lightboxTitle"></h3>
+      <p class="lightbox-desc" id="lightboxDesc"></p>
+    </div>
   </div>
 
   <!-- App Main Scripts -->
